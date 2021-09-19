@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  background-color: rgb(253, 255, 244);
+  max-width: 1040px;
+  margin: auto;
+}
+
+h1 {
+  margin: 10px;
+  margin-left: 2em;
+}
+
+.container-form {
+  border: 2px black solid;
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.formulario {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.formulario input:focus{
+    box-shadow: none;    
+    background-color: rgba(47, 0, 255, 0.116);
+    outline-offset: 0;
+    padding: 1px 2px;
+    outline: #000 1px;
+}
+.formulario input:focus-visible{
+    outline-offset: 0;
+    padding: 1px 2px;
+    outline: #000 1px;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.formulario button {
+  border: none;
+  margin-left: 5px;
+  padding: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+.formulario button:hover {
+  background-color: #b6b6b6;
+  color: white;
+}
+
+.formulario button:active {
+  background-color: #ccc;
+  color: #eee;
+  transform: translateY(2px);
+}
+
+
+.tarjetas {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+}
+.visa {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.visa .bloques {
+  background-color: rgba(47, 0, 255, 0.116);
+  flex: auto;
+  padding-bottom: 1em;
+}
+.naranja {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.naranja .bloques {
+  background-color: rgba(255, 68, 0, 0.329);
+  flex: auto;
+  padding-bottom: 1em;
+}
+.bloques {
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.copy-btn {
+  fill: #fff;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+i{
+  margin-left: 4px;
+}
+
+i:hover {
+  color: #444;
+}
+i:active {
+  color: #777;
+}
+
+
+/*hoover para mostrar o esconder los iconos de copy
+*
+*/
