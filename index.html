@@ -4,120 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="estilos.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
-    <script src="https://kit.fontawesome.com/8fe2412c63.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/8fe2412c63.js"
+      crossorigin="anonymous"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora lapos</title>
   </head>
   <body>
-    <h1>Calculadora lapos </h1>
-    <div class="container-form">
-      <label >Ingresá un monto </label>
-      <div class="formulario">        
-        <input
-        class="monto"
-          type="text"
-          name="monto"
-          required =""          
-          id="monto"
-          maxlength="10"
-          min="10"
-          placeholder="Ingrese monto"
-        />
-      </div>
+    <h1>Calculadora lapos</h1>
+    <div class="container-form" id="containerForm">
+      <label>Ingresá un monto </label>
+      <input type="text" placeholder="$0,00" id="monto" maxlength="10">
+      <button onclick="calcular()"> Calcular</button>
     </div>
-    <div class="tarjetas">
-      <h2>Visa - MasterCard - Cabal<i class="far fa-copy" onclick="copy(this)"></i></h2>
-      <div class="visa">
-        <div class="bloques">
-          <h3>1 Cuota</h3>
-          <div class="cuota una-cuota"></div>
-          <div class="cuota una-cuota"></div>
-          <div class="cuota cada-una"></div>
-          <div class="cuota cada-una"></div>
-          <div class="cuota interes-una"></div>
-          <div class="cuota interes-una"></div>
-        </div>
-        <div class="bloques">
-          <h3>2 Cuotas</h3>
-          <div class="cuota dos-cuota"></div>
-          <div class="cuota dos-cuota"></div>
-          <div class="cuota cada-dos"></div>
-          <div class="cuota cada-dos"></div>
-          <div class="cuota interes-dos"></div>
-          <div class="cuota interes-dos"></div>
-        </div>
-        <div class="bloques">
-          <h3>3 Cuotas</h3>
-          <div class="cuota tres-cuota"></div>          
-          <div class="cuota tres-cuota"></div>
-          <div class="cuota cada-tres"></div>
-          <div class="cuota cada-tres"></div>
-          <div class="cuota interes-tres"></div>
-          <div class="cuota interes-tres"></div>
-        </div>
-        <div class="bloques">
-          <h3>6 Cuotas</h3>
-          <div class="cuota seis-cuota"></div>
-          <div class="cuota seis-cuota"></div>
-          <div class="cuota cada-seis"></div>
-          <div class="cuota cada-seis"></div>
-          <div class="cuota interes-seis"></div>
-          <div class="cuota interes-seis"></div>
-        </div>
-        <div class="bloques">
-          <h3>12 Cuotas</h3>
-          <div class="cuota doce-cuota"></div>
-          <div class="cuota doce-cuota"></div>
-          <div class="cuota cada-doce"></div>
-          <div class="cuota cada-doce"></div>
-          <div class="cuota interes-doce"></div>
-          <div class="cuota interes-doce"></div>
-        </div>
-      </div>
-      <h2>Naranja</h2>
-      <div class="naranja">
-        <div class="bloques">
-          <h3>1 Cuota</h3>
-          <div class="cuota una-cuota-naranja"></div>
-          <div class="cuota una-cuota-naranja"></div>
-          <div class="cuota cada-una-naranja"></div>
-          <div class="cuota cada-una-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-        </div>
-        <div class="bloques">
-          <h3>2 Cuotas</h3>
-          <div class="cuota dos-cuota-naranja"></div>
-          <div class="cuota dos-cuota-naranja"></div>
-          <div class="cuota cada-dos-naranja"></div>
-          <div class="cuota cada-dos-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-        </div>
-        <div class="bloques">
-          <h3>Zeta</h3>
-          <div class="cuota zeta-cuota-naranja"></div>
-          <div class="cuota zeta-cuota-naranja"></div>
-          <div class="cuota cada-zeta-naranja"></div>
-          <div class="cuota cada-zeta-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-        </div>
-        <div class="bloques">
-          <h3>12 Cuotas</h3>
-          <div class="cuota doce-cuota-naranja"></div>
-          <div class="cuota doce-cuota-naranja"></div>
-          <div class="cuota cada-doce-naranja"></div>
-          <div class="cuota cada-doce-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-          <div class="cuota interes-una-naranja"></div>
-        </div>
-      </div>
+    <div class="tarjetas" id="contenedorTarjetas">
+      
     </div>
 
-    <script src="refactor array.js"></script>
+    <script src="refactor template.js"></script>
   </body>
 </html>

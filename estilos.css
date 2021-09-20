@@ -19,20 +19,20 @@ h1 {
   border-radius: 5px;
 }
 
-.formulario {
+.container-form {
   padding: 5px;
   display: flex;
   justify-content: center;
   align-items: baseline;
 }
-.formulario input:focus{
+.container-form{
     box-shadow: none;    
     background-color: rgba(47, 0, 255, 0.116);
     outline-offset: 0;
     padding: 1px 2px;
     outline: #000 1px;
 }
-.formulario input:focus-visible{
+.container-form input:focus-visible{
     outline-offset: 0;
     padding: 1px 2px;
     outline: #000 1px;
@@ -41,28 +41,27 @@ h1 {
 label {
   display: flex;
   justify-content: center;
-  margin-top: 5px;
+  margin: 15px 2em;
 }
-.formulario button {
+.container-form button {
   border: none;
-  margin-left: 5px;
+  margin-left: 1em;
   padding: 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border-radius: 4px;
 }
-.formulario button:hover {
+.container-form button:hover {
   background-color: #b6b6b6;
   color: white;
 }
 
-.formulario button:active {
+.container-form button:active {
   background-color: #ccc;
   color: #eee;
   transform: translateY(2px);
 }
-
 
 .tarjetas {
   width: 90%;
@@ -71,26 +70,26 @@ label {
   flex-direction: column;
   align-items: center;
 }
-.visa {
+.Visa-Mastercard-Cabal {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.visa .bloques {
+.Visa-Mastercard-Cabal .bloques {
   background-color: rgba(47, 0, 255, 0.116);
   flex: auto;
   padding-bottom: 1em;
 }
-.naranja {
+.Naranja {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.naranja .bloques {
+.Naranja .bloques {
   background-color: rgba(255, 68, 0, 0.329);
   flex: auto;
   padding-bottom: 1em;
@@ -116,10 +115,14 @@ i:hover {
   color: #444;
 }
 i:active {
-  color: #777;
+  color: #222;
+  transform: translateY(2px);
 }
 
-
-/*hoover para mostrar o esconder los iconos de copy
-*
-*/
+h4{
+  font-weight: 400;
+  margin-bottom: 0;
+}
+b{
+  font-weight: 500;
+}

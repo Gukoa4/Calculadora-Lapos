@@ -82,9 +82,19 @@ const icon = ()=>{
 const copy =(obj)=>{
   
   let hermano = obj.previousSibling.data;
-  console.log(hermano);
+  
   hermano = hermano.replace("$", "");
   hermano = hermano.replace("+", "");
-  console.log(hermano);
+  console.log("Texto copiado",hermano);
   navigator.clipboard.writeText(hermano);
 }
+
+containerForm.addEventListener("onunload",()=>{
+  console.log ("evento");
+  monto.value ="";
+})
+
+/*
+Copy text
+*/
+
