@@ -70,11 +70,26 @@ function documento(arrayCuotas) {
         <div class="bloques">
         <h3>${arrayCuotas[i][j][3]} Cuota</h3>
         <h4>Valor final</h4>
-        <b>$${arrayCuotas[i][j][0]}<i class="far fa-copy" onclick="copy(this)" aria-hidden="true"></i></b>
+        <div class="tooltip">
+        <b>$${arrayCuotas[i][j][0]}</b>
+          <i class="far fa-copy" onclick="copy(this)" onmouseout="outFunc(this)" aria-hidden="true">
+             <span class="tooltiptext" id="myTooltip">Copiar</span>
+          </i>
+          </div>
         <h4>Valor cuota</h4>
+        <div class="tooltip">
         <b>$${arrayCuotas[i][j][1]}</b>
+          <i class="far fa-copy" onclick="copy(this)" onmouseout="outFunc(this)" aria-hidden="true">
+             <span class="tooltiptext" id="myTooltip">Copiar</span>
+          </i>
+          </div>
         <h4>Interes</h4>
-        <b>$${arrayCuotas[i][j][2]}<i class="far fa-copy" onclick="copy(this)" aria-hidden="true"></i></b>
+        <div class="tooltip">
+        <b>$${arrayCuotas[i][j][2]}</b>
+        <i class="far fa-copy" onclick="copy(this)" onmouseout="outFunc(this)" aria-hidden="true">
+        <span class="tooltiptext" id="myTooltip">Copiar</span>
+        </i>
+        </div>
         `;
     }
   }
@@ -102,23 +117,6 @@ function calcular() {
   }
   let arrCuotas = calculo(numero, cuotas);
   documento(arrCuotas);
-  // const arra = document.querySelectorAll(".cuota");
-  // let j = 0;
-  // for (let i = 0; i < arra.length; i += 6, j++) {
-  //   arra[i].innerHTML = `Valor final <br>`;
-  //   arra[i + 1].innerHTML = `$${arrCuotas[j][1]} `;
-  //   arra[i + 1].appendChild(icon());
-  //   arra[i + 1].style.fontWeight = "500";
-
-  //   arra[i + 2].innerHTML = "<br> Valor cuota";
-  //   arra[i + 3].innerHTML = "$" + arrCuotas[j][2];
-  //   arra[i + 3].style.fontWeight = "500";
-
-  //   arra[i + 4].innerHTML = "<br>Interes";
-  //   arra[i + 5].innerHTML = "+ $" + arrCuotas[j][3];
-  //   arra[i + 5].appendChild(icon());
-  //   arra[i + 5].style.fontWeight = "500";
-  // }
   monto.value = "";
 }
 
@@ -132,13 +130,17 @@ const icon = () => {
 };
 
 const copy = (obj) => {
-  let hermano = obj.previousSibling.data;
 
+  let hermano = obj.previousElementSibling.innerText;
   hermano = hermano.replace("$", "");
   hermano = hermano.replace("+", "");
-  console.log("Texto copiado", hermano);
   navigator.clipboard.writeText(hermano);
+  obj.children[0].innerText = "Copiado";
 };
+
+function outFunc(obj) {
+ obj.children[0].innerText = "Copiar";
+}
 
 /*
 Copy text
