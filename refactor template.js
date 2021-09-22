@@ -1,13 +1,12 @@
 "use strict";
-//let monto = document.querySelector(".monto");
-let iconoCopy = document.querySelector(".far");
 
 /**
  * @description Obtener los montos y cuotas
  * @returns Un objeto con la tarjeta, valor total, cuota y monto de interes
  */
+let iconoCopy = document.querySelector(".far");
 const calculo = (monto, cuotas) => {
-  //let calculos = [["visa"],["naranja"]];
+
   let calculos = [["Visa-Mastercard-Cabal"], ["Naranja"]];
 
   for (let j = 0; j < cuotas.length; j++) {
@@ -38,26 +37,10 @@ function financial(x) {
 }
 
 function documento(arrayCuotas) {
-  // oklet h2Visa = document.createElement("h2");
-  //ok let h2Naranja = document.createElement("h2");
-  //ok let divVisa = document.createElement("div");
-  //ok divVisa.classList.add("visa");
-  // let divNaranja = document.createElement("div");
-  // okdivNaranja.classList.add("narnaja")
-  // oklet bloques = document.createElement("div");
-  // let cantidadCuotas = document.createElement("h3");
-  // let valorFinal = document.createElement("span");
-  // let total = document.createElement("b");
-  // let valorCuota = document.createElement("span");
-  // let individual =document.createElement("b");
-  // let valorInteres = document.createElement("span");
-  // let interes = document.createElement("b");
+
   contenedorTarjetas.innerHTML = "";
   for (let i = 0; i < arrayCuotas.length; i++) {
-    //matriz 2 dimensiones, 0 es nombre de la tarjeta
-    //tarjeta es un array vector
 
-    //arrayCuotas[i][0]
     contenedorTarjetas.innerHTML += `
     <h2>${arrayCuotas[i][0]}</h2>
     <div class="${arrayCuotas[i][0]}">
@@ -66,9 +49,20 @@ function documento(arrayCuotas) {
     `;
     for (let j = 1; j < arrayCuotas[i].length; j++) {
       let bloques = document.querySelector("." + arrayCuotas[i][0]);
+      let cantidadCuotas
+      if (arrayCuotas[i][j][3] === 1){
+        cantidadCuotas = arrayCuotas[i][j][3] + " Cuota"
+      }
+      else {
+        cantidadCuotas = arrayCuotas[i][j][3] + " Cuotas"
+      }
+      if (arrayCuotas[i][j][3]==="Zeta"){
+        cantidadCuotas = "Zeta"
+      } 
       bloques.innerHTML += `
         <div class="bloques">
-        <h3>${arrayCuotas[i][j][3]} Cuota</h3>
+        
+        <h3>${cantidadCuotas}</h3>
         <h4>Valor final</h4>
         <div class="tooltip">
         <b>$${arrayCuotas[i][j][0]}</b>
@@ -120,15 +114,6 @@ function calcular() {
   monto.value = "";
 }
 
-const icon = () => {
-  // <i class="far fa-copy"></i>
-  let copyIcon = document.createElement("i");
-  copyIcon.classList.add("far");
-  copyIcon.classList.add("fa-copy");
-  copyIcon.setAttribute("onclick", "copy(this)");
-  return copyIcon;
-};
-
 const copy = (obj) => {
 
   let hermano = obj.previousElementSibling.innerText;
@@ -142,6 +127,28 @@ function outFunc(obj) {
  obj.children[0].innerText = "Copiar";
 }
 
-/*
-Copy text
-*/
+(
+  function setThemeMode() {
+    let ico = document.querySelector("#theme");
+    let mode = localStorage.getItem("preferredmode");
+    if (mode == "dark") {
+      document.body.className += " darktheme";
+      ico.classList.replace ("fa-sun","fa-moon")
+    }
+  })();
+
+  function retheme() {
+    let cc = document.body.className;
+    let ico = document.querySelector("#theme");
+    if (cc.indexOf("darktheme") > -1) {
+      document.body.className = cc.replace("darktheme", "");
+      if (opener) {opener.document.body.className = cc.replace("darktheme", "");}
+      localStorage.setItem("preferredmode", "light");
+      ico.classList.replace ("fa-moon","fa-sun")
+    } else {
+      document.body.className += " darktheme";
+      if (opener) {opener.document.body.className += " darktheme";}
+      localStorage.setItem("preferredmode", "dark");
+      ico.classList.replace ("fa-sun","fa-moon")
+    }
+  }

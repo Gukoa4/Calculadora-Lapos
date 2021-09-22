@@ -13,25 +13,24 @@ h1 {
 }
 
 .container-form {
-  border: 2px black solid;
+
   width: 90%;
   margin: auto;
   border-radius: 5px;
-}
-
-.container-form {
   padding: 5px;
   display: flex;
   justify-content: center;
   align-items: baseline;
+  box-shadow: none;    
+  background-color: rgba(94, 75, 180, 0.527);
+  outline-offset: 0;
+  padding: 1px 2px;
 }
-.container-form{
-    box-shadow: none;    
-    background-color: rgba(47, 0, 255, 0.116);
-    outline-offset: 0;
-    padding: 1px 2px;
-    outline: #000 1px;
+input {
+  background-color: rgb(255, 255, 255);
 }
+
+
 .container-form input:focus-visible{
     outline-offset: 0;
     padding: 1px 2px;
@@ -90,7 +89,7 @@ label {
   justify-content: space-evenly;
 }
 .Naranja .bloques {
-  background-color: rgba(255, 68, 0, 0.329);
+  background-color: rgba(255, 68, 0, 0.479);
   flex: auto;
   padding-bottom: 1em;
 }
@@ -99,7 +98,6 @@ label {
   text-align: center;
   border-radius: 5px;
 }
-
 
 .copy-btn {
   fill: #fff;
@@ -113,11 +111,10 @@ i{
 }
 
 i:hover {
-  color: #444;
+  color: #555;
 }
 i:active {
-  color: #222;
-  
+  color: #222;  
 }
 
 h4{
@@ -139,8 +136,9 @@ b{
     visibility: hidden;
     width: 60px;
     background-color: #555;
-    color: #fff;
+    color: #eee;
     text-align: center;
+    font-weight: 600;
     border-radius: 6px;
     padding: 5px;
     position: absolute;
@@ -184,3 +182,41 @@ b{
   padding-left: 1em;
   padding-right: 0%;
 }
+
+header{
+  display: flex;
+  justify-content: space-around;
+}
+
+header i {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  font-size: 2em;
+}
+
+body.darktheme {
+  background-color:rgb(40, 44, 52);
+  color: #eee;
+}
+body.darktheme #tryitLeaderboard{
+  background-color:rgb(40, 44, 52);
+}
+body.darktheme .trytopnav{
+  background-color:#616161;
+  color:#dddddd;
+}
+body.darktheme #container {
+  background-color:#616161;
+}
+body.darktheme .trytopnav a {
+  color:#dddddd;
+}
+body.darktheme input {
+  color:#fff;
+  background-color:rgb(45, 56, 80);
+}
+body.darktheme ::-webkit-scrollbar {width:12px;height:3px;}
+body.darktheme ::-webkit-scrollbar-track-piece {background-color:#000;}
+body.darktheme ::-webkit-scrollbar-thumb {height:50px;background-color: #616161;}
+body.darktheme ::-webkit-scrollbar-thumb:hover {background-color: #aaaaaa;}
