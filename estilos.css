@@ -196,7 +196,7 @@ header i {
 }
 
 body.darktheme {
-  background-color:rgb(40, 44, 52);
+  background-color: #252c48;
   color: #eee;
 }
 body.darktheme #tryitLeaderboard{
@@ -214,7 +214,7 @@ body.darktheme .trytopnav a {
 }
 body.darktheme input {
   color:#fff;
-  background-color:rgb(45, 56, 80);
+  background-color: #252c48;
 }
 body.darktheme ::-webkit-scrollbar {width:12px;height:3px;}
 body.darktheme ::-webkit-scrollbar-track-piece {background-color:#000;}
