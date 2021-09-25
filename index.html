@@ -21,16 +21,20 @@
     <header>
       <h1>Calculadora lapos</h1>
       <i class="far fa-sun" onclick="retheme()" id="theme"></i>
+      <i class="far fa-clock" id="historyBtn"></i>
     </header>
-    <div class="container-form" id="containerForm">
+    <div class="container-form visible" id="containerForm">
       <label>Ingresá un monto </label>
-      <input type="text" placeholder="$0,00" id="monto" maxlength="10">
-      <button onclick="calcular()"> Calcular</button>
+      <input type="text" placeholder="$0,00" id="monto" maxlength="10" onkeypress="if (event.keyCode == 13) calcular()">
+      <button onclick="calcular()">  Calcular</button>
     </div>
-    <div class="tarjetas" id="contenedorTarjetas">
+    <div class="tarjetas visible" id="contenedorTarjetas">
       
     </div>
+    <div class="contenedor-historial invisible" id="historial">
+      <div class="tarjeta-historica"></div>
 
-    <script src="refactor template.js"></script>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>

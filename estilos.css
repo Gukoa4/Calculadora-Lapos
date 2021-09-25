@@ -12,6 +12,7 @@ h1 {
   margin-left: 2em;
 }
 
+
 .container-form {
 
   width: 90%;
@@ -220,3 +221,79 @@ body.darktheme ::-webkit-scrollbar {width:12px;height:3px;}
 body.darktheme ::-webkit-scrollbar-track-piece {background-color:#000;}
 body.darktheme ::-webkit-scrollbar-thumb {height:50px;background-color: #616161;}
 body.darktheme ::-webkit-scrollbar-thumb:hover {background-color: #aaaaaa;}
+
+
+/*Historial*/
+
+.nombres{
+    
+  max-width: 700px;
+  margin: auto;
+  margin-top: 40px;
+}
+.nombre{
+  display: grid;
+  grid-template-columns: minmax(100px,300px) 1fr;
+  border-top: 1px solid rgb(58, 34, 34);
+}
+.options{
+  display: flex;
+  justify-self: end;
+}
+.add-nombres {
+  margin-top: 40px;
+}
+#nombre{
+  padding: 4px 8px;
+}
+
+#add {
+  padding: 4px 8px;
+}
+
+.options button{
+  background: transparent;
+  border: none;
+  margin: 4px 10px;
+  outline: none;
+}
+
+.delete:hover{
+  color: #999;
+}
+
+.imposible {
+  color: #ccc;
+}
+
+.posible {
+  color: #37d;
+}
+
+.posible:hover {
+  color: #6af;
+}
+
+.nombre h2{
+  padding: 5px;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.contenedor-historial{
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  padding: 5px;
+  justify-content: center;
+  align-items: baseline;
+  box-shadow: none;    
+  outline-offset: 0;
+  padding: 1px 2px;
+}
