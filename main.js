@@ -139,7 +139,7 @@ function outFunc(obj) {
     let mode = localStorage.getItem("preferredmode");
     if (mode == "dark") {
       document.body.className += " darktheme";
-      ico.classList.replace ("fa-sun","fa-moon")
+      ico.classList.replace ("fa-moon","fa-sun")
     }
   })();
 
@@ -150,12 +150,12 @@ function outFunc(obj) {
       document.body.className = cc.replace("darktheme", "");
       if (opener) {opener.document.body.className = cc.replace("darktheme", "");}
       localStorage.setItem("preferredmode", "light");
-      ico.classList.replace ("fa-moon","fa-sun")
+      ico.classList.replace ("fa-sun","fa-moon")
     } else {
       document.body.className += " darktheme";
       if (opener) {opener.document.body.className += " darktheme";}
       localStorage.setItem("preferredmode", "dark");
-      ico.classList.replace ("fa-sun","fa-moon")
+      ico.classList.replace ("fa-moon","fa-sun")
     }
   }
 
